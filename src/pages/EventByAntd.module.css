@@ -1,13 +1,12 @@
-/* EventByBootstrap용 css 파일*/
 .page__style {
     background: #b02d29;
     height: 100vh;
     overflow: auto;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 .page__style::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+    display: none;
 }
 .header {
     position: sticky;
@@ -16,9 +15,9 @@
     border-bottom: 1px solid #eaeaea;
     background: #fff;
     z-index: 2;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
 }
 .header__btn {
     background: none;
@@ -43,9 +42,6 @@
 }
 .percent__section {
     padding: 40px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .percent {
@@ -109,19 +105,12 @@
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
-    background: rgba( 216, 75, 71, 0.4 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 0px );
-    -webkit-backdrop-filter: blur( 0px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .filter__btn[data-active='true'] {
     background: #d84b47;
     color: #fff;
     font-weight: 600;
-    
 }
 
 .top__sales {
@@ -137,9 +126,7 @@
 }
 
 .top__sales_list {
-    display: flex;
-    gap: 16px;
-    padding: 16px;
+    padding-top: 16px;
     padding-bottom: 24px;
     overflow: auto;
     -ms-overflow-style: none; /* IE and Edge */
@@ -150,7 +137,7 @@
     display: none; /* Chrome, Safari, Opera*/
 }
 .product {
-    border-radius: 0px 0px 16px 16px;
+    border-radius: 16px;
     background: #fff;
 }
 
@@ -159,13 +146,8 @@
     width: 240px !important;
     height: 240px;
     object-fit: cover;
-    display: block;
 }
 .product .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
     border-radius: 16px 16px 0px 0px;
     padding: 8px;
     -webkit-border-radius: 16px 16px 0px 0px;
@@ -181,7 +163,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 21px */
-    margin: 0;
 }
 .product .content h3 {
     height: 48px;
@@ -205,7 +186,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 27px */
-    margin: 0;
 }
 .product .content .price {
     color: #b02d29;
@@ -214,27 +194,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 27px */
-    margin: 0;
-}
-
-.show__all__btn {
-    width: 100%;
-    padding: 16px 8px;
-    border-radius: 8px;
-    background: #6b0603;
-    border: none;
-    color: #fff;
-    font-family: SUIT;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%; /* 24px */
-}
-.show__all__btn:hover,
-.show__all__btn:focus,
-.show__all__btn:active {
-    background: #6b0603 !important;
-    border: none !important;
 }
 
 .coupon__section {
@@ -250,7 +209,7 @@
     text-align: center;
     margin-bottom: 28px;
 }
-.coupon__section p {
+.coupon__section .coupon__date {
     color: #fff;
     font-family: SUIT;
     font-size: 16px;
@@ -267,10 +226,6 @@
 
 .coupon__content,
 .coupon__download {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     top: 0;
     width: 100%;
@@ -308,36 +263,4 @@
     padding: 0;
     border: none;
     cursor: pointer;
-}
-
-.comment__input {
-    position: sticky;
-    bottom: 0;
-    background-color: #fff;
-}
-.comment__input__field {
-    border-radius: 22px;
-    border: 1px solid #eaeaea;
-    font-family: SUIT;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    padding: 11px 8px;
-    -webkit-border-radius: 22px;
-    -moz-border-radius: 22px;
-    -ms-border-radius: 22px;
-    -o-border-radius: 22px;
-    outline: none !important;
-    box-shadow: none !important;
-}
-.comment__input__field:hover,
-.comment__input__field:active,
-.comment__input__field:focus {
-    border: 1px solid #ff6b3c;
-    outline: none !important;
-    box-shadow: none !important;
-}
-.comment__input__field::placeholder {
-    color: #a8a8a8;
 }

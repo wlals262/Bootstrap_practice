@@ -1,35 +1,26 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import styles from './EventByBootstrap.module.css';
-
-import { BrowserRouter, Link } from 'react-router-dom';
+import styles from './EventByAntd.module.css';
+import { Flex, Button } from 'antd';
 
 import arrow_left from '../assets/icons/arrow_left.svg';
 import share from '../assets/icons/share.svg';
 
-import ProductList from '../components/ProductList';
 import EventMainSection from '../components/EventMainSection';
-import { Form } from 'react-bootstrap';
+import { BrowserRouter, Link } from 'react-router-dom';
+import AntdProductList from '../components/AntdProductList';
 
-const EventByBootstrap = () => {
+const EventByAntd = () => {
     const [currentFilter, setCurrentFilter] = useState('남성의류');
     const handleCurrnetFilter = (newFilter) => {
         setCurrentFilter(newFilter);
     }
-
-    const [currentState, setCurrentState] = useState('mansCloth');
-    const handleCurrentState = (state) => {
-        setCurrentState(state);
-    }
-
     return (
         <BrowserRouter>
             <article className='layout'>
                 <div>
                     <div className={styles.page__style}>
-
-                        {/* 헤더태그 */}
-                        <section className={styles.header}>
+                        <Flex justify='space-between' align='center' className={styles.header}>
+                            {/* 헤더태그 */}
                             <button className={styles.header__btn}>
                                 <img src={arrow_left} alt="왼쪽 화살표" />
                             </button>
@@ -39,7 +30,7 @@ const EventByBootstrap = () => {
                                     <img src={share} alt="share button" />
                                 </button>
                             </Link>
-                        </section>
+                        </Flex>
 
                         {/* 이벤트이미지 2개 */}
                         <EventMainSection />
@@ -52,7 +43,6 @@ const EventByBootstrap = () => {
                                 data-active={currentFilter === '남성의류'}
                                 onClick={() => {
                                     handleCurrnetFilter('남성의류');
-                                    handleCurrentState('mansCloth');
                                 }}
                             >
                                 남성의류
@@ -62,7 +52,6 @@ const EventByBootstrap = () => {
                                 data-active={currentFilter === '여성의류'}
                                 onClick={() => {
                                     handleCurrnetFilter('여성의류');
-                                    handleCurrentState('womansCloth');
                                 }}
                             >
                                 여성의류
@@ -72,7 +61,6 @@ const EventByBootstrap = () => {
                                 data-active={currentFilter === '가전제품'}
                                 onClick={() => {
                                     handleCurrnetFilter('가전제품');
-                                    handleCurrentState('productList');
                                 }}
                             >
                                 가전제품
@@ -81,9 +69,9 @@ const EventByBootstrap = () => {
                             <div className={styles.top__sales}>
                                 <h2>실시간 인기 TOP5</h2>
 
-                                <ProductList category = {currentState} />
+                                <AntdProductList />
 
-                                <Button className={styles.show__all__btn}>
+                                <Button block type = 'primary' className={styles.show__all__btn}>
                                     전체 상품 보기
                                 </Button>
                             </div>
@@ -100,15 +88,15 @@ const EventByBootstrap = () => {
                     </div>
                 </div>
                 <div style={{ padding: '8px 16px' }}>
-                    <Form.Control
+                    {/* <Form.Control
                         placeholder="답글을 입력해주세요."
                         style={{ background: '#F6F6F6' }}
                         className={styles.comment__input__field}
-                    />
+                    /> */}
                 </div>
             </article>
         </BrowserRouter>
     )
 }
 
-export default EventByBootstrap;
+export default EventByAntd;
